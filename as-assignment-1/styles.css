@@ -1,0 +1,45 @@
+h1 {
+    color: rgb(255, 65, 65);
+    font-family: 'Merriweather', serif;
+}
+
+img {
+    width: 700px;
+    position: relative;
+}
+
+.divClass {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;    
+}
+
+.divClass2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin: auto;    
+}
+
+#spanId {
+    font-size: 18px;
+    margin: 50px;
+}
+
+#spanId2 {
+    font-size: 16px;
+    margin: 50px;
+}
+
+p {
+    font-size: 16px;   
+}
+
+body {
+    font-family: 'Merriweather', serif;
+}
