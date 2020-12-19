@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <title>Landing Page using Flexbox</title>
+</head>
+<body>
+    <header id="header">
+        <h2><a href="#"><img src="img/logo.png" width="150"></a></h2>
+        <nav id="nav-bar">
+            <li class="nav-link"><a href="#">Home</a></li>
+            <li class="nav-link"><a href="#features">Features</a></li>
+            <li class="nav-link"><a href="#preview">Preview</a></li>
+            <li class="nav-link"><a href="#newsletter">Newsletter</a></li>
+        </nav>
+    </header>
+    
+    <section class="one">
+        <div class="background-image" id="header-img"></div>
+
+        <h1>
+            CHROMALUXE
+        </h1>
+        <h3>
+            Creating a higher standard
+        </h3>
+
+
+    </section>
+
+    <section class="our-work">
+    <h3 class="title">Metal Print is the future of Photographic Printing</h3>
+    <p>ChromaLuxe is the world’s leading manufacturer of high-definition sublimatable photo panels. The combination of color brilliance, superior durability and archival qualities makes ChromaLuxe the perfect choice for image reproduction. Learn how our innovative products will give your images a lasting impact.
+    </p>
+    <hr>
+    <ul class="grid">
+        <li class="small" style="background-image: url(img/example1.jpg)"></li>
+        <li class="large" style="background-image: url(img/example3.jpg)"></li>
+        <li class="large" style="background-image: url(img/example4.jpg)"></li>
+        <li class="small" style="background-image: url(img/example5.jpg)"></li>
+
+    </ul>
+
+    </section>
+
+
+    <section class="features" id="features">
+    <h3 class="title">Unmatched and Unbelievable</h3>
+    <p>At ChromaLuxe, we’ve perfected our manufacturing process to create the highest quality photographic product available in the market today. We coat our aluminum plates with a very fine multiple layer polymer finish. Our photo panels contain a specialized, formulated coating that provides the foundation for a visually stunning and durable image.</p>
+    <hr>
+    <ul class="grid">
+        <li>
+            <i</i>
+            <h4>Color Brilliance</h4>
+            <p>Images are infused directly into our specialty coated metal sheets, creating unsurpassed color vibrancy and resolution.</p>
+            <br>
+            <br>
+            <br>
+            <br>
+        </li>
+        <li>
+            <i></i>
+            <h4>Fade Resistant</h4>
+            <p>The latest fade testing shows that our prints will last a lifetime with resistance to yellowing and climate damage.</p>
+            <br>
+            <br>
+            <br>
+            <br>
+        </li>
+        <li>
+            <i></i>
+            <h4>Flame Resistant </h4>
+            <p>All ChromaLuxe products meet ASTM standards for flame spread and smoke development.</p>
+            <br>
+            <br>
+            <br>
+            <br>
+        </li> 
+        <li>
+            <i></i>
+            <h4>Scratch Resistant </h4>
+            <p>Unique substrates and coatings provide incredible scratch and abrasion resistance.</p>
+        </li>
+        <li>
+            <i></i>
+            <h4>Lightweight</h4>
+            <p>All of our products are lightweight and extremely durable, making transportation and display easier than ever before.</p>
+        </li>
+        <li>
+            <i></i>
+            <h4>Easy to clean</h4>
+            <p>Our metal prints can be wiped clean with a cloth and any all-purpose cleaner, allowing your image to shine hassle free.</p>
+        </li> 
+        
+        
+
+    </ul>
+
+    </section>
+
+    <section class="reviews" id="preview">
+    <h3 class="title">Take a sneak peek of our Printing Technology:</h3>
+    <iframe width="900" height="500" src="https://www.youtube.com/embed/HqbWoYHwSkE" frameborder="0" id="video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    <section class="contact" id="newsletter">
+    <h3 class="title">
+        Subscribe to our Newsletter
+    </h3>
+    <p>
+        There’s a reason ‘Luxe’ is in our name. We are the world’s leading manufacturer of superior print mediums.
+    </p>
+    <hr>
+    <form id="form">
+            <input type="email" placeholder="Enter your email address" id="email">
+            <a href="#" class="btn" id="submit">Subscribe now</a>
+    </form>
+
+    </section>
+
+
+    <footer>
+        <ul>
+            <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-snapchat-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-github-square"></i></a></li>
+        </ul>
+        <p>Chromaluxe, Inc. All rights reserved.</p>
+    </footer>
+
+    <script src="easy_background.js"></script>
+    <script>
+      easy_background(".background-image",
+        {
+          slide: ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg"],
+          delay: [2500, 2500, 2500, 2500, 2500]
+        }
+      );
+    </script>
+</body>
+</html>
