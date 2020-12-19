@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-style-10">
+        <h1 id="title">Sign Up to our Newsletter!<p id="description">Share us your preferences!</p></h1>
+        <form id="newsletter-signup-form" action="/submit_page.php" method="get">
+            <div class="section"><span>1</span>Identity</div>
+            <div class="inner-wrap">
+                <label id="name-label">Your Full Name <input type="text" name="field1" id="name" placeholder="Enter your complete name"/></label>
+                <label id="address">Address <textarea name="field2" placeholder="Enter your residential address"></textarea></label>
+                <label id="number-label">Age <input type="number" size="6" name="age" min="18" max="99" placeholder="Enter your age" oninvalid="this.setCustomValidity('Please enter age within the range of 18 and 99 years old!')"
+                    oninput="this.setCustomValidity('')"></label>
+                <label id="gender">Gender</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male" style="display: inline;">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female" style="display: inline;">Female</label>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other" style="display: inline;">Other</label>
+
+            </div>
+        
+            <div class="section"><span>2</span>Email & Phone</div>
+            <div class="inner-wrap">
+                <label id="email-label">Email Address <input type="email" name="field3" id="email" placeholder="Enter your email address"/></label>
+                <label id="number-label">Phone Number <input type="text" name="field4" id="number" placeholder="Enter your phone number" pattern="\d*" oninvalid="this.setCustomValidity('Please only enter numbers!')"
+                    oninput="this.setCustomValidity('')"/></label>
+            </div>
+
+            <div class="section"><span>3</span>Preferences</div>
+            <div class="inner-wrap">
+                <label id="interests" for="interests">Interests:</label>
+                    <select id="dropdown" name="field4">
+                    <optgroup label="Indoors">
+                    <option value="fishkeeping">Fishkeeping</option>
+                    <option value="reading">Reading</option>
+                    <option value="boxing">Boxing</option>
+                    <option value="debate">Debate</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="snooker">Snooker</option>
+                    <option value="other_indoor">Other</option>
+                    </optgroup>
+                    <optgroup label="Outdoors">
+                    <option value="football">Football</option>
+                    <option value="swimming">Swimming</option>
+                    <option value="fishing">Fishing</option>
+                    <option value="climbing">Climbing</option>
+                    <option value="cycling">Cycling</option>
+                    <option value="other_outdoor">Other</option>
+                    </optgroup>
+                    </select>      
+            </div>
+        
+            <div class="section"><span>4</span>Passwords</div>
+                <div class="inner-wrap">
+                <label id="password">Password <input type="password" name="field5" /></label>
+                <label>Confirm Password <input type="password" name="field6" /></label>
+            </div>
+            <div class="button-section">
+             <input type="submit" name="Sign Up" />
+             <span class="privacy-policy">
+             <input type="checkbox" name="field7">You agree to our Terms and Policy. 
+             </span>
+            </div>
+        </form>
+        </div>
+</body>
+</html>
