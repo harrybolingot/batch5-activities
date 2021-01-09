@@ -1,5 +1,6 @@
 const currentScores = document.getElementsByClassName('player-score');
 const totalScores = document.getElementsByClassName('player-current-score');
+const playerPanels = document.getElementsByClassName('player-panel');
 
 const numOfPlayers = 2;
 const prefix = "player-";
@@ -41,11 +42,13 @@ function startNewGame(){
         players.push(new Player("player" + (i+1), i));
         currentScores[i].innerHTML = 0;
         totalScores[i].innerHTML = 0;
+        playerPanels[i].classList.remove('winner');
+        playerPanels[i].classList.remove('active');
     }
-
     document.getElementById("gameState").style.display = "none";
     currentPlayer = players[0];
     currentPlayerIndex = 0;
+    document.getElementById(currentPlayer.label + '-panel').classList.add("active");
     isGameOver = false;
 }
 

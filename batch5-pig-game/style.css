@@ -37,8 +37,7 @@ body {
     overflow: hidden;
 }
 
-.player-1-panel,
-.player-2-panel {
+.player-panel {
     width: 50%;
     float: left;
     height: 600px;
