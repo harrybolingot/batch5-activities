@@ -65,7 +65,7 @@ function hold(){
     if(isGameOver == false){
         currentPlayer.updateTotalScore();
         if(currentPlayer.totalScore > 99) gameOver();
-        nextTurn();
+        else nextTurn();
     }
 
     else startNewGame();
@@ -82,7 +82,6 @@ function nextTurn() {
 function gameOver() {
     isGameOver = true;
     document.getElementById(currentPlayer.label + '-panel').classList.add("winner");
-    document.getElementById(currentPlayer.label + '-panel').classList.add("active");
     document.getElementById("gameState").style.display = "block";
 }
 
