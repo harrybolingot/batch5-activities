@@ -68,7 +68,7 @@ function rollDice(){
     else {
         let diceRollValue = randomNumber(diceMin, diceMax);
         console.log(diceRollValue);
-        document.getElementById('dice').src = "dice-" + diceRollValue + ".png";
+        document.getElementById('dice').src = "./assets/dice-" + diceRollValue + ".png";
         if(player1.turn === true) {
             if(diceRollValue === 1) {
                 player1.currentScore = 0;
