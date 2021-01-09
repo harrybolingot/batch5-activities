@@ -4,103 +4,286 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <title>Chessboard using Grid</title>
+    <link rel="stylesheet" href="highlighter/prism.css">
+    <script src="highlighter/prism.js"></script>
+    <title>Exercise: Responsive Chessboard using Grid</title>
 </head>
-<body>
-    <div class="label-row">
-        <div>h</div>
-        <div>g</div>
-        <div>f</div>
-        <div>e</div>
-        <div>d</div>
-        <div>c</div>
-        <div>b</div>
-        <div>a</div>
+<body style="display: flex; flex-wrap: nowrap; align-items: space-around;">
+    <div style="margin-right: auto; margin-left: auto;">
+      <h4 style="margin-bottom: 1%; margin-top: 0%; margin-left: -3%;">Responsive Chessboard using Grid:</h4>
+        <div class="label-row">
+            <div>h</div>
+            <div>g</div>
+            <div>f</div>
+            <div>e</div>
+            <div>d</div>
+            <div>c</div>
+            <div>b</div>
+            <div>a</div>
+        </div>
+        
+        <div class="label-column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+        <main class="chessboard">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+    
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+    
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+    
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+    
+        </main>
     </div>
-    
-    <div class="label-column">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
+
+    <div style="margin-left: 2%;">
+        <h4 style="margin-bottom: 0%; margin-top: 0%;">CSS Code:</h4>
+        <pre class="line-numbers"><code class="language-css">:root {
+    --chess-bg-color: #000;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+}
+
+.chessboard {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(8, [col] 4.75vw);
+    grid-template-rows: repeat(8, [row] 4.75vw);
+    width: 38vw;
+    border: 2px solid #000;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+
+}
+
+.chessboard div {
+    padding-top: 1vw;
+    text-align: center;
+}
+
+.chessboard div:nth-child(-n+8):nth-child(even) {
+    background: var(--chess-bg-color);
+}
+
+.chessboard div:nth-child(n+8):nth-child(-n+16):nth-child(odd) {
+    background: var(--chess-bg-color);
+}
+
+.chessboard div:nth-child(n+17):nth-child(-n+24):nth-child(even) {
+    background: var(--chess-bg-color);
+}
+
+.chessboard div:nth-child(n+25):nth-child(-n+32):nth-child(odd) {
+    background: var(--chess-bg-color);
+}
+
+.chessboard div:nth-child(n+33):nth-child(-n+40):nth-child(even) {
+    background: var(--chess-bg-color);
+}
+
+.chessboard div:nth-child(n+41):nth-child(-n+48):nth-child(odd) {
+    background: var(--chess-bg-color);
+}
+
+.chessboard div:nth-child(n+49):nth-child(-n+56):nth-child(even) {
+    background: var(--chess-bg-color);
+}
+
+.chessboard div:nth-child(n+57):nth-child(-n+64):nth-child(odd) {
+    background: var(--chess-bg-color);
+}
+
+.label-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 38vw;
+    margin: auto;
+}
+
+.label-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    height: 38vw;
+    position: absolute;
+    margin-left: -1%;
+    transform: translate(-50%, 0%);
+}</code></pre>
+
+        <h4 style="margin-bottom: 0%; margin-top: 0%;">HTML Code:</h4>
+        <pre class="language-markup line-numbers"><code class="language-markup"><!--<div class="label-row">
+    <div>h</div>
+    <div>g</div>
+    <div>f</div>
+    <div>e</div>
+    <div>d</div>
+    <div>c</div>
+    <div>b</div>
+    <div>a</div>
+</div>
+
+<div class="label-column">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+</div>
+<main class="chessboard">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</main>--></code></pre>
     </div>
-    <main class="chessboard">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-
-    </main>
 </body>
 </html>

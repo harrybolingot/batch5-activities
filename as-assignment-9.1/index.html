@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deck of Cards Exercise</title>
+    <script type="text/javascript" src="solver.js"></script>
+    <link rel="stylesheet" href="highlighter/prism.css">
+    <script src="highlighter/prism.js"></script>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: rgb(0, 0, 0);
+            background-color:#ffffff;
+            border: 1px solid rgb(49, 49, 49);
+            border-radius: 10px;
+            box-shadow: 0 9px #999;
+            max-width: 50px;
+        }
+
+        .button:hover {background-color: #f8eca9}
+
+        .button:active {
+            background-color: #f8eca9;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        div {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 0%; 
+            margin-top: 0%; 
+            margin-right: 5vh;
+        }
+
+        h2, h4 {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        pre {
+            min-width: 40vh; 
+            max-width: 90vh; 
+            max-height: 90vh;
+        }
+
+        .output {
+            margin-left: 10vh;
+        }
+    </style>
+</head>
+<body style="display: flex; flex-wrap: nowrap; align-items: space-around;">
+    <div style="margin-top: -1.5%; margin-right: 8%; margin-left: 0%">
+        <h2>Deck of Cards Exercise</h2>
+        <p>Using an array data structure, create a standard deck of cards (52) represented by strings:  (e.g. 'A♠', '2♥', 'Q♦', 'K♣'). Print the content of the cards whenever there is a change in the deck after each task.</p>
+        
+        <p>Choose the corresponding number of choice from the following options (exercise tasks).</p>
+        <ol>
+            <li>Shuffle deck.</li>
+            <li>Arrange shuffled deck by <strong>suit</strong>.</li>
+            <li>Arrange shuffled deck by <strong>rank</strong>.</li>
+            <li>Deal a card.</li>
+            <li>Reset.</li>
+        </ol>
+
+        <button style="margin-left: 20%;" class="button" onclick="shuffleThenShow(deck)">1</button>
+        <button class="button" onclick="arrangeBySuit(deck)">2</button>
+        <button class="button" onclick="arrangeByRank(deck)">3</button>
+        <button class="button" onclick="dealCard(deck)">4</button>
+        <button class="button" onclick="reset()">5</button>
+
+        <p style="margin-top: 10%;" class="output" id="output_dealCard"></p>
+        <p class="output" id="generalLabel"></p>
+        <p class="output" id="output_row0"></p>
+        <p class="output" id="output_row13"></p>
+        <p class="output" id="output_row26"></p>
+        <p class="output" id="output_row39"></p>
+    </div>
+
+    <div style="margin-right: 0;">
+        <h4 style="margin-bottom: 0%; margin-top: 0%;">JavaScript Code:</h4>
+        <pre class="line-numbers"><code class="language-javascript">// Bridge ranking order
+var orig_suit = ['♣', '♦', '♥', '♠'];
+
+// Ace high ranking order
+var orig_rank = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+
+var suit_title = ["Clubs", "Diamonds", "Hearts", "Spades"];
+var rank_title = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"];
+
+var deck = [];
+var label = "";
+
+function originalDeck(deck){
+for (i = 0; i < orig_suit.length; i++) {
+for (j = 0; j < orig_rank.length; j++) {
+    let card = orig_rank[j] + orig_suit[i];
+    deck.push(card);
+}
+}
+}
+
+originalDeck(deck);
+
+function showDeck(deck, label) {
+document.getElementById("generalLabel").innerHTML = label;
+for (x = 0; x < deck.length; x += 13) {
+document.getElementById("output_row"+x).innerHTML = deck[x] + " " + deck[x + 1] + " " + deck[x + 2] + " " + deck[x + 3] + " " + deck[x + 4] + " " + deck[x + 5] + " " + deck[x + 6] + " " + deck[x + 7] + " " + deck[x + 8] + " " + deck[x + 9] + " " + deck[x + 10] + " " + deck[x + 11] + " " + deck[x + 12];
+}
+}
+
+function justShuffle(deck) {
+for (i = deck.length - 1; i > 0; i--) {
+j = Math.floor(Math.random() * i);
+k = deck[i];
+deck[i] = deck[j];
+deck[j] = k;
+}
+}
+
+function shuffleThenShow(deck) {
+for (i = deck.length - 1; i > 0; i--) {
+j = Math.floor(Math.random() * i);
+k = deck[i];
+deck[i] = deck[j];
+deck[j] = k;
+}
+label = "Shuffled deck: "
+document.getElementById("output_dealCard").innerHTML = "";
+showDeck(deck, label);
+}
+
+function arrangeBySuit(deck) {
+justShuffle(deck);
+label = "Shuffled deck";
+showDeck(deck, label);
+
+deck.sort(function(a, b) {
+    var x = a.charAt(a.length-1);
+    var y = b.charAt(b.length-1);
+    if (x < y) {return 1;}
+    if (x > y) {return -1;}
+    return 0;
+});
+document.getElementById("output_dealCard").innerHTML = "";
+showDeck(deck, label);
+}
+
+function arrangeByRank(deck) {
+justShuffle(deck);
+label = "Shuffled deck";
+showDeck(deck, label);
+
+deck.sort(function(a, b) {
+    var x = orig_rank.indexOf(a.slice(0,-1));
+    var y = orig_rank.indexOf(b.slice(0,-1));
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+});
+label = "Arranged by rank:";
+document.getElementById("output_dealCard").innerHTML = "";
+showDeck(deck, label);
+}
+
+function dealCard(deck) {
+label = "Previous deck of cards:";
+showDeck(deck, label);
+let chosenCard = deck[Math.floor(Math.random() * 52)];
+document.getElementById("output_dealCard").innerHTML = "You've chosen: " +   rank_title[orig_rank.indexOf(chosenCard.slice(0,-1))] + " of " +   suit_title[orig_suit.indexOf(chosenCard.charAt(chosenCard.length-1))];
+}
+
+function reset() {
+deck = [];
+label = "Reset!<br><br>Original deck of cards:";
+document.getElementById("output_dealCard").innerHTML = "";
+originalDeck(deck);
+showDeck(deck, label);
+}</code></pre>
+    </div>
+</body>
+</html>

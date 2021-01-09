@@ -4,120 +4,297 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css" />
-    <title>Chessboard</title>
+    <link rel="stylesheet" href="highlighter/prism.css">
+    <script src="highlighter/prism.js"></script>
+    <title>Exercise: Responsive Chessboard using Flex</title>
 </head>
-<body>
+<body style="display: flex; flex-wrap: nowrap; align-items: space-around;">
+  <div style="margin-right: auto; margin-left: auto;">
+    <h4 style="margin-bottom: 1%; margin-top: 0%; margin-left: -4%">Responsive Chessboard using Flex:</h4>
     <div class="label-row">
-        <div>h</div>
-        <div>g</div>
-        <div>f</div>
-        <div>e</div>
-        <div>d</div>
-        <div>c</div>
-        <div>b</div>
-        <div>a</div>
-    </div>
-    
-    <div class="label-column">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-    </div>
+      <div>h</div>
+      <div>g</div>
+      <div>f</div>
+      <div>e</div>
+      <div>d</div>
+      <div>c</div>
+      <div>b</div>
+      <div>a</div>
+  </div>
+  
+  <div class="label-column">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+  </div>
 
-    <div class="chessboard">
-        <div class="row" id="row1">
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-        </div>
-  
-         <div class="row">
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-        </div>
-  
-        <div class="row">
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-        </div>
-  
-         <div class="row">
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-        </div>
-  
-        <div class="row">
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-        </div>
-  
-         <div class="row">
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-        </div>
-  
-        <div class="row">
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-        </div>
-  
-         <div class="row">
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-          <div class="black-box"></div>
-          <div class="white-box"></div>
-        </div>
+  <div class="chessboard">
+      <div class="row" id="row1">
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
       </div>
+
+       <div class="row">
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+      </div>
+
+      <div class="row">
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+      </div>
+
+       <div class="row">
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+      </div>
+
+      <div class="row">
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+      </div>
+
+       <div class="row">
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+      </div>
+
+      <div class="row">
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+      </div>
+
+       <div class="row">
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+        <div class="black-box"></div>
+        <div class="white-box"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-left: 2%;">
+    <h4 style="margin-bottom: 0%; margin-top: 0%;">CSS Code:</h4>
+    <pre class="line-numbers"><code class="language-css">.chessboard{
+  border: 2px solid black;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  height: 38vw;
+  width: 38vw;
+  position: absolute;
+  left: 21%;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translate(-50%, 0%);
+}
+  
+.row{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+  
+  
+.white-box{
+    background-color: #ffffff;
+    flex: 1;
+}
+  
+.black-box{
+    background-color: #000000;
+    flex: 1;
+}
+
+.label-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 38vw;
+    margin-left: auto;
+}
+
+.label-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    height: 38vw;
+    position: absolute;
+    margin-left: -1%;
+    transform: translate(-50%, 0%);
+}
+
+html {
+  font-family: Helvetica, Arial, sans-serif;
+}</code></pre>
+
+    <h4 style="margin-bottom: 0%; margin-top: 0%;">HTML Code:</h4>
+    <pre class="language-markup line-numbers"><code class="language-html"><!--<div class="label-row">
+  <div>h</div>
+  <div>g</div>
+  <div>f</div>
+  <div>e</div>
+  <div>d</div>
+  <div>c</div>
+  <div>b</div>
+  <div>a</div>
+</div>
+
+<div class="label-column">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <div>8</div>
+</div>
+
+<div class="chessboard">
+  <div class="row" id="row1">
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+  </div>
+
+    <div class="row">
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+  </div>
+
+  <div class="row">
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+  </div>
+
+    <div class="row">
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+  </div>
+
+  <div class="row">
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+  </div>
+
+    <div class="row">
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+  </div>
+
+  <div class="row">
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+  </div>
+
+    <div class="row">
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+    <div class="black-box"></div>
+    <div class="white-box"></div>
+  </div>
+</div>--></code></pre>
+
+  </div>
     
 </body>
 </html>
