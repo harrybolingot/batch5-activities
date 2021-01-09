@@ -1,39 +1,39 @@
-const playerName1 = document.getElementById('name-0');
-const playerScore1 = document.getElementById('score-0');
-const playerCurrentScore1 = document.getElementById('current-0');
-const playerName2 = document.getElementById('name-1');
-const playerScore2 = document.getElementById('score-1');
-const playerCurrentScore2 = document.getElementById('current-1');
+const currentScores = document.getElementsByClassName('player-score');
+const totalScores = document.getElementsByClassName('player-current-score');
 
-var diceMin = 1, diceMax = 6, roundNumber = 0;
-var isGameOver;
+const numOfPlayers = 2;
+var players = [];
+var isGameOver, currentPlayer;
+const prefix = "player-";
 
 class Player {
     currentScore = 0;
     totalScore = 0;
-    turn = true;
-    hold = false;
 
-    constructor(name){
+    constructor(name, index){
         this.name = name;
+        this.index = index;
+        this.label = prefix + (index+1);
     }
 
     updateScore(diceValue) {
-        this.currentScore += diceValue;
+        if(diceValue == 1) {
+            this.currentScore = 0;
+        }
+
+        else {
+            this.currentScore += diceValue;
+        }
+        currentScores[this.index].innerHTML = this.currentScore;
     }
 
     playerHold() {
         this.totalScore += this.currentScore;
+        this.currentScore = 0;
+        totalScores[this.index].innerHTML = this.totalScore;
+        currentScores[this.index].innerHTML = this.currentScore;
     }
 }
-
-let player1 = new Player("Player 1");
-let player2 = new Player("Player 2");
-
-startNewGame();
-
-console.log(player1.turn)
-console.log(player2.turn)
 
 function randomNumber(min, max) {
     min = Math.ceil(min);
@@ -42,104 +42,53 @@ function randomNumber(min, max) {
 }
 
 function startNewGame(){
-    isGameOver = false;
-    player1.currentScore = 0;
-    player2.currentScore = 0;
-    player1.totalScore = 0;
-    player2.totalScore = 0;
-    player1.turn = true;
-    player2.turn = false;
-    playerScore1.innerHTML = player1.currentScore;
-    playerScore2.innerHTML = player2.currentScore;
-    playerCurrentScore1.innerHTML = player1.totalScore;
-    playerCurrentScore2.innerHTML = player1.totalScore;
-    document.getElementById("player-1-panel").classList.remove("winner");
-    document.getElementById("player-1-panel").classList.add("active");
-    document.getElementById("player-2-panel").classList.remove("winner");
-    document.getElementById("player-2-panel").classList.remove("active");
+    players = [];
+    for(i = 0; i < numOfPlayers; i++) {
+        players.push(new Player("player" + (i+1), i));
+        currentScores[i].innerHTML = 0;
+        totalScores[i].innerHTML = 0;
+    }
+
     document.getElementById("gameState").style.display = "none";
+    currentPlayer = players[0];
+    currentPlayerIndex = 0;
+    isGameOver = false;
 }
 
-function rollDice(){
-    if(isGameOver === true) {
-        startNewGame();
+function rollDice() {
+    if(isGameOver == false){
+        let diceValue = randomNumber(1, 6);
+        document.getElementById('dice').src = "./assets/dice-" + diceValue + ".png";
+        currentPlayer.updateScore(diceValue);
+        if(diceValue == 1) nextTurn();
     }
 
-    else {
-        let diceRollValue = randomNumber(diceMin, diceMax);
-        console.log(diceRollValue);
-        document.getElementById('dice').src = "./assets/dice-" + diceRollValue + ".png";
-        if(player1.turn === true) {
-            if(diceRollValue === 1) {
-                player1.currentScore = 0;
-                changeTurn();
-            } else {
-                player1.updateScore(diceRollValue);
-            }
-            console.log('PLAYER SCORE: ' + player1.currentScore);
-            playerScore1.innerHTML = player1.currentScore;
-        } else {
-            if(diceRollValue === 1) {
-                player2.currentScore = 0;
-                changeTurn();
-            } else {
-                player2.updateScore(diceRollValue);
-            }
-            console.log('PLAYER SCORE: ' + player2.currentScore);
-            playerScore2.innerHTML = player2.currentScore;
-        } 
-    }
+    else startNewGame();
 }
 
-function holdScore() {
-    if(isGameOver === true) {
-        startNewGame();
+function hold(){
+    if(isGameOver == false){
+        currentPlayer.playerHold();
+        if(currentPlayer.totalScore > 99) gameOver();
+        nextTurn();
     }
 
-    else {
-        if(player1.turn === true) {
-            player1.playerHold();
-            player1.currentScore = 0;
-            console.log('PLAYER HELD: ' + player1.totalScore)
-            playerCurrentScore1.innerHTML = player1.totalScore;
-        } else {
-            player2.playerHold();
-            player2.currentScore = 0;
-            console.log('PLAYER HELD: ' + player2.totalScore)
-            playerCurrentScore2.innerHTML = player2.totalScore;
-        }
-    
-        if (player1.totalScore >= 100){
-            document.getElementById("player-1-panel").classList.add("active");
-            document.getElementById("player-1-panel").classList.add("winner");
-            document.getElementById("gameState").style.display = "block";
-            isGameOver = true;
-        }
-    
-        else if (player2.totalScore >= 100){
-            document.getElementById("player-2-panel").classList.add("winner");
-            document.getElementById("player-2-panel").classList.add("winner");
-            document.getElementById("gameState").style.display = "block";
-            isGameOver = true;
-        }
-    
-        else {
-            isGameOver = false;
-            changeTurn();
-        }
-    }
+    else startNewGame();
 }
-function changeTurn() {
-    player1.turn = !player1.turn;
-    player2.turn = !player2.turn;
 
-    if (player1.turn === true){
-        document.getElementById("player-1-panel").classList.add("active");
-        document.getElementById("player-2-panel").classList.remove("active");
-    } 
-
-    if (player2.turn === true){
-        document.getElementById("player-1-panel").classList.remove("active");
-        document.getElementById("player-2-panel").classList.add("active");
-    } 
+function nextTurn() {
+    document.getElementById(currentPlayer.label + '-panel').classList.remove("active");
+    currentPlayerIndex++;
+    if(currentPlayerIndex > players.length-1) currentPlayerIndex = 0;
+    currentPlayer = players[currentPlayerIndex];
+    document.getElementById(currentPlayer.label + '-panel').classList.add("active");
 }
+
+function gameOver() {
+    isGameOver = true;
+    document.getElementById(currentPlayer.label + '-panel').classList.add("winner");
+    document.getElementById(currentPlayer.label + '-panel').classList.add("active");
+    document.getElementById("gameState").style.display = "block";
+}
+
+startNewGame();
