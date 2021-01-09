@@ -16,18 +16,13 @@ class Player {
         this.label = prefix + (index+1);
     }
 
-    updateScore(diceValue) {
-        if(diceValue == 1) {
-            this.currentScore = 0;
-        }
-
-        else {
-            this.currentScore += diceValue;
-        }
+    updateCurrentScore(diceValue) {
+        if(diceValue == 1) this.currentScore = 0;
+        else this.currentScore += diceValue;
         currentScores[this.index].innerHTML = this.currentScore;
     }
 
-    playerHold() {
+    updateTotalScore() {
         this.totalScore += this.currentScore;
         this.currentScore = 0;
         totalScores[this.index].innerHTML = this.totalScore;
@@ -59,7 +54,7 @@ function rollDice() {
     if(isGameOver == false){
         let diceValue = randomNumber(1, 6);
         document.getElementById('dice').src = "./assets/dice-" + diceValue + ".png";
-        currentPlayer.updateScore(diceValue);
+        currentPlayer.updateCurrentScore(diceValue);
         if(diceValue == 1) nextTurn();
     }
 
@@ -68,7 +63,7 @@ function rollDice() {
 
 function hold(){
     if(isGameOver == false){
-        currentPlayer.playerHold();
+        currentPlayer.updateTotalScore();
         if(currentPlayer.totalScore > 99) gameOver();
         nextTurn();
     }
