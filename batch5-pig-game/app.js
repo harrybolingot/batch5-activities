@@ -2,9 +2,8 @@ const currentScores = document.getElementsByClassName('player-score');
 const totalScores = document.getElementsByClassName('player-current-score');
 
 const numOfPlayers = 2;
-var players = [];
-var isGameOver, currentPlayer;
 const prefix = "player-";
+var isGameOver, currentPlayer, players;
 
 class Player {
     currentScore = 0;
