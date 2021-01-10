@@ -5,12 +5,141 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
         <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./assets/highlighter/prism.css">
         <title>Pig Game</title>
     </head>
 
     <body>
+        <a href="#" class="show-code-btn" id="myBtn" style="text-decoration: none;">&#60;&#47;&#62;</a>
+        <div id="myModal" class="modal">
+            <div class="modal-content" id="myModal-content">
+                <div class="show-code">
+                    <h4 style="margin-bottom: 0%; margin-top: 0%;">JavaScript:</h4>
+                    <pre class="line-numbers"><code class="language-javascript">const currentScores = document.getElementsByClassName('player-score');
+const totalScores = document.getElementsByClassName('player-current-score');
+const playerPanels = document.getElementsByClassName('player-panel');
+
+const numOfPlayers = 2;
+const prefix = "player-";
+var isGameOver, currentPlayer, players;
+
+class Player {
+    currentScore = 0;
+    totalScore = 0;
+
+    constructor(name, index){
+        this.name = name;
+        this.index = index;
+        this.label = prefix + (index+1);
+    }
+
+    updateCurrentScore(diceValue) {
+        if(diceValue == 1) this.currentScore = 0;
+        else this.currentScore += diceValue;
+        currentScores[this.index].innerHTML = this.currentScore;
+    }
+
+    updateTotalScore() {
+        this.totalScore += this.currentScore;
+        this.currentScore = 0;
+        totalScores[this.index].innerHTML = this.totalScore;
+        currentScores[this.index].innerHTML = this.currentScore;
+    }
+}
+
+function randomNumber(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function startNewGame(){
+    players = [];
+    for(i = 0; i &#60; numOfPlayers; i++) {
+        players.push(new Player("player" + (i+1), i));
+        currentScores[i].innerHTML = 0;
+        totalScores[i].innerHTML = 0;
+        playerPanels[i].classList.remove('winner');
+        playerPanels[i].classList.remove('activate');
+    }
+    document.getElementById("gameState").style.display = "none";
+    currentPlayer = players[0];
+    currentPlayerIndex = 0;
+    document.getElementById(currentPlayer.label + '-panel').classList.add("activate");
+    isGameOver = false;
+}
+
+function rollDice() {
+    if(isGameOver == false){
+        let diceValue = randomNumber(1, 6);
+        document.getElementById('dice').src = "./assets/dice-" + diceValue + ".png";
+        currentPlayer.updateCurrentScore(diceValue);
+        if(diceValue == 1) nextTurn();
+    }
+
+    else startNewGame();
+}
+
+function hold(){
+    if(isGameOver == false){
+        currentPlayer.updateTotalScore();
+        if(currentPlayer.totalScore > 99) gameOver();
+        else nextTurn();
+    }
+
+    else startNewGame();
+}
+
+function nextTurn() {
+    document.getElementById(currentPlayer.label + '-panel').classList.remove("activate");
+    currentPlayerIndex++;
+    if(currentPlayerIndex > players.length-1) currentPlayerIndex = 0;
+    currentPlayer = players[currentPlayerIndex];
+    document.getElementById(currentPlayer.label + '-panel').classList.add("activate");
+}
+
+function gameOver() {
+    isGameOver = true;
+    document.getElementById(currentPlayer.label + '-panel').classList.add("winner");
+    document.getElementById("gameState").style.display = "block";
+}
+
+startNewGame();</code></pre>
+                </div>
+                <div class="show-code">
+                    <h4 style="margin-bottom: 0%; margin-top: 0%;">HTML:</h4>
+                    <pre class="language-markup line-numbers"><code class="language-html"><!--<div class="wrapper clearfix">
+<div class="player-panel activate" id="player-1-panel">
+    <div class="player-name" id="name-0">Player 1</div>
+    <div class="player-score" id="score-0">0</div>
+    <div class="player-current-box">
+        <div class="player-current-label">Current</div>
+        <div class="player-current-score" id="current-0">0</div>
+    </div>
+</div>
+
+<div class="player-panel" id="player-2-panel">
+    <div class="player-name" id="namgit ae-1">Player 2</div>
+    <div class="player-score" id="score-1">0</div>
+    <div class="player-current-box">
+        <div class="player-current-label">Current</div>
+        <div class="player-current-score" id="current-1">0</div>
+    </div>
+</div>
+
+<button class="btn-new" onclick="startNewGame()"><i class="ion-ios-plus-outline"></i>New game</button>
+<button class="btn-roll" onclick="rollDice()"><i class="ion-ios-loop"></i>Roll dice</button>
+<button class="btn-hold" onclick="hold()"><i class="ion-ios-download-outline"></i>Hold</button>
+
+<img id="dice" src="./assets/dice-6.png" alt="Dice" class="dice">
+<div class="gameState" id="gameState">GAME OVER</div>
+</div>--></code></pre>
+                </div>
+            </div>
+        </div>
+
         <div class="wrapper clearfix">
-            <div class="player-panel active" id="player-1-panel">
+            <div class="player-panel activate" id="player-1-panel">
                 <div class="player-name" id="name-0">Player 1</div>
                 <div class="player-score" id="score-0">0</div>
                 <div class="player-current-box">
@@ -37,5 +166,6 @@
         </div>
         
         <script src="app.js"></script>
+        <script src="./assets/highlighter/prism.js"></script>
     </body>
 </html>

@@ -43,12 +43,12 @@ function startNewGame(){
         currentScores[i].innerHTML = 0;
         totalScores[i].innerHTML = 0;
         playerPanels[i].classList.remove('winner');
-        playerPanels[i].classList.remove('active');
+        playerPanels[i].classList.remove('activate');
     }
     document.getElementById("gameState").style.display = "none";
     currentPlayer = players[0];
     currentPlayerIndex = 0;
-    document.getElementById(currentPlayer.label + '-panel').classList.add("active");
+    document.getElementById(currentPlayer.label + '-panel').classList.add("activate");
     isGameOver = false;
 }
 
@@ -74,11 +74,11 @@ function hold(){
 }
 
 function nextTurn() {
-    document.getElementById(currentPlayer.label + '-panel').classList.remove("active");
+    document.getElementById(currentPlayer.label + '-panel').classList.remove("activate");
     currentPlayerIndex++;
     if(currentPlayerIndex > players.length-1) currentPlayerIndex = 0;
     currentPlayer = players[currentPlayerIndex];
-    document.getElementById(currentPlayer.label + '-panel').classList.add("active");
+    document.getElementById(currentPlayer.label + '-panel').classList.add("activate");
 }
 
 function gameOver() {
@@ -88,3 +88,32 @@ function gameOver() {
 }
 
 startNewGame();
+
+var modal = document.getElementById("myModal");
+var modalContent = document.getElementById("myModal-content");
+
+var btn = document.getElementById("myBtn");
+var closeButton = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    if (modal.classList.contains('show')){
+        modal.classList.remove('show');
+        modalContent.classList.remove('show');
+    } 
+    else{
+        modal.classList.add('show');
+        modalContent.classList.add('show');
+    } 
+}
+
+closeButton.onclick = function() {
+    modal.classList.remove('show');
+    modalContent.classList.remove('show');
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.classList.remove('show');
+    modalContent.classList.remove('show');
+  }
+}

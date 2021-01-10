@@ -6,7 +6,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 .clearfix::after {
@@ -69,10 +68,10 @@ body {
     margin-bottom: 130px;
 }
 
-.active { background-color: #f7f7f7; }
-.active .player-name { font-weight: 300; }
+.activate { background-color: #f7f7f7; }
+.activate .player-name { font-weight: 300; }
 
-.active .player-name::after {
+.activate .player-name::after {
     content: "\2022";
     font-size: 47px;
     position: absolute;
@@ -123,6 +122,7 @@ button:hover i { margin-right: 20px; }
 
 button:focus {
     outline: none;
+    background-color: transparent;
 }
 
 i {
@@ -160,3 +160,94 @@ i {
 
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: -1000;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.4s; 
+}
+  
+.modal-content {
+    position: relative;
+    display: flex;
+    background-color: #fefefe;
+    margin: auto;
+    padding-right: 1%;
+    border: 1px solid #888;
+    border-radius: 15px;
+    overflow: auto;
+    height: 80vh;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    top: 0vh;
+    opacity: 0;
+    transition: top 0.4s, opacity 0.4s;
+}
+
+.modal.show {
+    opacity: 1;
+    z-index: 1;
+}
+
+.modal-content.show {
+        top: 10vh;
+        opacity: 1;
+}
+  
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+  
+.modal-body {padding: 2px 16px;}
+  
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.show-code-btn {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
+    position: fixed;
+    right: 23px;
+    top: 23px;
+    z-index: 997;
+    overflow: hidden;
+    width: 56px;
+    height: 56px;
+    line-height: 40px;
+    padding-top: 0.5%;
+    background-color: #2196F3;
+    border-radius: 50%;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.show-code {
+    justify-content: space-between;
+    max-width: 50%;
+    padding-left: 1%;
+}
+
+h4 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 1%;
+}
+
+pre {
+    max-width: 100%; 
+    height: 93%;
+}
