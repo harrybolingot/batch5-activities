@@ -1,149 +1,671 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
-    <title>Landing Page using Flexbox</title>
-</head>
-<body>
-    <header id="header">
-        <h2><a href="#"><img src="img/logo.png" width="150"></a></h2>
-        <nav id="nav-bar">
-            <li class="nav-link"><a href="#">Home</a></li>
-            <li class="nav-link"><a href="#features">Features</a></li>
-            <li class="nav-link"><a href="#preview">Preview</a></li>
-            <li class="nav-link"><a href="#newsletter">Newsletter</a></li>
-        </nav>
-    </header>
-    
-    <section class="one">
-        <div class="background-image" id="header-img"></div>
-
-        <h1>
-            CHROMALUXE
-        </h1>
-        <h3>
-            Creating a higher standard
-        </h3>
-
-
-    </section>
-
-    <section class="our-work">
-    <h3 class="title">Metal Print is the future of Photographic Printing</h3>
-    <p>ChromaLuxe is the world’s leading manufacturer of high-definition sublimatable photo panels. The combination of color brilliance, superior durability and archival qualities makes ChromaLuxe the perfect choice for image reproduction. Learn how our innovative products will give your images a lasting impact.
-    </p>
-    <hr>
-    <ul class="grid">
-        <li class="small" style="background-image: url(img/example1.jpg)"></li>
-        <li class="large" style="background-image: url(img/example3.jpg)"></li>
-        <li class="large" style="background-image: url(img/example4.jpg)"></li>
-        <li class="small" style="background-image: url(img/example5.jpg)"></li>
-
-    </ul>
-
-    </section>
-
-
-    <section class="features" id="features">
-    <h3 class="title">Unmatched and Unbelievable</h3>
-    <p>At ChromaLuxe, we’ve perfected our manufacturing process to create the highest quality photographic product available in the market today. We coat our aluminum plates with a very fine multiple layer polymer finish. Our photo panels contain a specialized, formulated coating that provides the foundation for a visually stunning and durable image.</p>
-    <hr>
-    <ul class="grid">
-        <li>
-            <i</i>
-            <h4>Color Brilliance</h4>
-            <p>Images are infused directly into our specialty coated metal sheets, creating unsurpassed color vibrancy and resolution.</p>
-            <br>
-            <br>
-            <br>
-            <br>
-        </li>
-        <li>
-            <i></i>
-            <h4>Fade Resistant</h4>
-            <p>The latest fade testing shows that our prints will last a lifetime with resistance to yellowing and climate damage.</p>
-            <br>
-            <br>
-            <br>
-            <br>
-        </li>
-        <li>
-            <i></i>
-            <h4>Flame Resistant </h4>
-            <p>All ChromaLuxe products meet ASTM standards for flame spread and smoke development.</p>
-            <br>
-            <br>
-            <br>
-            <br>
-        </li> 
-        <li>
-            <i></i>
-            <h4>Scratch Resistant </h4>
-            <p>Unique substrates and coatings provide incredible scratch and abrasion resistance.</p>
-        </li>
-        <li>
-            <i></i>
-            <h4>Lightweight</h4>
-            <p>All of our products are lightweight and extremely durable, making transportation and display easier than ever before.</p>
-        </li>
-        <li>
-            <i></i>
-            <h4>Easy to clean</h4>
-            <p>Our metal prints can be wiped clean with a cloth and any all-purpose cleaner, allowing your image to shine hassle free.</p>
-        </li> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+        <link rel="stylesheet" href="./highlighter/prism.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
         
-        
+        <title>Landing Page using Flexbox</title>
+    </head>
+    <body>
+        <a href="javascript://" class="show-code-btn" id="myBtn" style="text-decoration: none;">&#60;&#47;&#62;</a>
+        <div id="myModal" class="modal">
+            <div class="modal-content" id="myModal-content">
+                <div class="show-code">
+                    <h4 style="margin-bottom: 0%; margin-top: 0%;">HTML:</h4>
+                    <pre class="language-markup line-numbers"><code class="language-html"><!--<header id="header">
+    <h2><a href="#"><img src="img/logo.png" width="150"></a></h2>
+    <nav id="nav-bar">
+        <li class="nav-link"><a href="#">Home</a></li>
+        <li class="nav-link"><a href="#features">Features</a></li>
+        <li class="nav-link"><a href="#preview">Preview</a></li>
+        <li class="nav-link"><a href="#newsletter">Newsletter</a></li>
+    </nav>
+</header>
 
-    </ul>
+<section class="one">
+    <div class="background-image" id="header-img"></div>
 
-    </section>
-
-    <section class="reviews" id="preview">
-    <h3 class="title">Take a sneak peek of our Printing Technology:</h3>
-    <iframe width="900" height="500" src="https://www.youtube.com/embed/HqbWoYHwSkE" frameborder="0" id="video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>
-
-    <section class="contact" id="newsletter">
-    <h3 class="title">
-        Subscribe to our Newsletter
+    <h1>
+        CHROMALUXE
+    </h1>
+    <h3>
+        Creating a higher standard
     </h3>
-    <p>
-        There’s a reason ‘Luxe’ is in our name. We are the world’s leading manufacturer of superior print mediums.
-    </p>
-    <hr>
-    <form id="form">
-            <input type="email" placeholder="Enter your email address" id="email">
-            <a href="#" class="btn" id="submit">Subscribe now</a>
-    </form>
+</section>
 
-    </section>
+<section class="our-work">
+<h3 class="title">Metal Print is the future of Photographic Printing</h3>
+<p>ChromaLuxe is the world’s leading manufacturer of high-definition sublimatable photo panels. The combination of color brilliance, superior durability and archival qualities makes ChromaLuxe the perfect choice for image reproduction. Learn how our innovative products will give your images a lasting impact.
+</p>
+<hr>
+<ul class="grid">
+    <li class="small" style="background-image: url(img/example1.jpg)"></li>
+    <li class="large" style="background-image: url(img/example3.jpg)"></li>
+    <li class="large" style="background-image: url(img/example4.jpg)"></li>
+    <li class="small" style="background-image: url(img/example5.jpg)"></li>
+
+</ul>
+</section>
+
+<section class="features" id="features">
+<h3 class="title">Unmatched and Unbelievable</h3>
+<p>At ChromaLuxe, we’ve perfected our manufacturing process to create the highest quality photographic product available in the market today. We coat our aluminum plates with a very fine multiple layer polymer finish. Our photo panels contain a specialized, formulated coating that provides the foundation for a visually stunning and durable image.</p>
+<hr>
+<ul class="grid">
+    <li>
+        <i</i>
+        <h4>Color Brilliance</h4>
+        <p>Images are infused directly into our specialty coated metal sheets, creating unsurpassed color vibrancy and resolution.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+    </li>
+    <li>
+        <i></i>
+        <h4>Fade Resistant</h4>
+        <p>The latest fade testing shows that our prints will last a lifetime with resistance to yellowing and climate damage.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+    </li>
+    <li>
+        <i></i>
+        <h4>Flame Resistant </h4>
+        <p>All ChromaLuxe products meet ASTM standards for flame spread and smoke development.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+    </li> 
+    <li>
+        <i></i>
+        <h4>Scratch Resistant </h4>
+        <p>Unique substrates and coatings provide incredible scratch and abrasion resistance.</p>
+    </li>
+    <li>
+        <i></i>
+        <h4>Lightweight</h4>
+        <p>All of our products are lightweight and extremely durable, making transportation and display easier than ever before.</p>
+    </li>
+    <li>
+        <i></i>
+        <h4>Easy to clean</h4>
+        <p>Our metal prints can be wiped clean with a cloth and any all-purpose cleaner, allowing your image to shine hassle free.</p>
+    </li> 
+    
+    
+
+</ul>
+
+</section>
+
+<section class="reviews" id="preview">
+<h3 class="title">Take a sneak peek of our Printing Technology:</h3>
+<iframe width="900" height="500" src="https://www.youtube.com/embed/HqbWoYHwSkE" frameborder="0" id="video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+
+<section class="contact" id="newsletter">
+<h3 class="title">
+    Subscribe to our Newsletter
+</h3>
+<p>
+    There’s a reason ‘Luxe’ is in our name. We are the world’s leading manufacturer of superior print mediums.
+</p>
+<hr>
+<form id="form">
+        <input type="email" placeholder="Enter your email address" id="email">
+        <a href="#" class="btn" id="submit">Subscribe now</a>
+</form>
+
+</section>
 
 
-    <footer>
-        <ul>
-            <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-snapchat-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-github-square"></i></a></li>
+<footer>
+    <ul>
+        <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+        <li><a href="#"><i class="fa fa-snapchat-square"></i></a></li>
+        <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
+        <li><a href="#"><i class="fa fa-github-square"></i></a></li>
+    </ul>
+    <p>Chromaluxe, Inc. All rights reserved.</p>
+</footer>--></code></pre>
+                </div>
+                <div class="show-code">
+                    <h4 style="margin-bottom: 0%; margin-top: 0%;">CSS:</h4>
+                    <pre class="line-numbers"><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font: normal 16px sans-serif;
+    font-family: 'Lora', serif;
+    color: #555;
+}
+ul, nav{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    
+    
+    opacity: 0.9;
+}
+
+h1, h3 {
+    font-family: 'Lora', serif;
+}
+
+a:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+a.btn{
+    color: #fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background-color: #2196f3;
+    font-weight: 800;
+    text-align: center;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 125px 100px;
+}
+ul.grid{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+section h3.title{
+    color: #414a4f; 
+    font: bold 32px 'Open Sans', sans-serif;
+    margin-bottom: 35px;
+    text-align: center;
+    font-family: 'Lora', serif;
+}
+section p{
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 35px;
+    padding: 0 20px;
+    line-height: 2;
+    font-family: 'Lora', serif;
+}
+hr {
+    width: 150px;
+    height: 2px;
+    background-color: #2196f3;
+    border: 0;
+    margin-bottom: 80px;
+}
+@media (max-width: 1000px){
+
+    section{
+        padding: 100px 50px;
+    }
+
+}
+
+@media (max-width: 600px){
+
+    section{
+        padding: 80px 30px;
+    }
+
+}
+
+/*Header*/
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 35px 100px 0;
+}
+header h2{
+    font-family: 'Lora', serif;
+}
+header nav {
+    display: flex;
+}
+header nav li {
+    margin: 0 15px;
+} 
+header nav li:first-child{
+    margin-left:0; 
+}
+header nav li:last-child{
+    margin-right: 0;
+}
+@media(max-width: 1000px){
+    header {
+        padding: 20px 50px;
+    }
+}
+@media(max-width:700px){
+    header{
+        flex-direction: column;
+    }
+    header h2{
+        margin-bottom: 15px;
+    }
+}
+
+/* /.Header */
+/* Section ONE */
+.one {
+    position: relative;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
+    text-align: center;
+}
+.one .background-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.one .background-image:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #414a4f;
+    opacity: 0.75;
+}
+.one h1 {
+    font-size: 80px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.one h3{
+    font-size: 60px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+.one a.btn {
+    padding: 20px 46px;
+}
+@media (max-width: 800px){
+    .one {
+        min-height: 600px;
+    }
+    .one h1 {
+        font-size: 48px;
+        font-family: 'Lora', serif;
+    }
+    .one h3{
+        font-size: 24px;
+        font-family: 'Lora', serif;
+    }
+    .one a.btn{
+        padding:15px 40px;
+    }
+}
+
+/* /.Section ONE*/
+
+/* our work section */
+.our-work{
+    background-color: #fff;
+}
+.our-work .grid li{
+    padding: 20px;
+    height: 350px;
+    border-radius: 3px;
+    background-clip:content-box;
+    background-size: cover;
+    background-position: center;
+    background-color: #333; 
+}
+.our-work .grid li.small{
+    flex-basis: 40%;
+}
+.our-work .grid li.large{
+    flex-basis: 60%;
+}
+@media (max-width: 1000px){
+    .our-work .grid li.small,
+    .our-work .grid li.large{
+        flex-basis:100%;
+    }
+}
+/* /. Our work */
+
+/*Section Features and Services*/
+.features {
+    background-color: #f7f7f7;
+}
+.features .grid li {
+    padding: 0 30px;
+    flex-basis: 33%;
+    text-align: center;
+}
+.features .grid li i {
+    color: #2196f3;
+    margin-bottom:25px;
+}
+.features .grid li h4{
+    color: #555;
+}
+.features .grid li p{
+    margin: 0;
+}
+@media (max-width: 1000px){
+
+    .features .grid li{
+        flex-basis: 70%;
+        margin-bottom: 65px;
+    }
+
+    .features .grid li:last-child{
+        margin-bottom: 0;
+    }
+
+}
+
+
+@media (max-width: 600px){
+
+    .features .grid li{
+        flex-basis: 100%;
+    }
+
+}
+/* /.Section Features and Services */
+
+/*Section reviews*/
+
+.reviews {
+    background-color: #fff;
+}
+.reviews .quote{
+    text-align: center;
+    width: 80%;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding:0;
+}
+.reviews .author {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+.reviews .author:last-child{
+    margin-bottom: 0;
+}
+@media (max-width: 1000px){
+    .reviews.quote{
+        font-size:20px;
+    }
+    .reviews .author{
+        font-size: 16px;
+    }
+}
+
+/* /.Section reviews */
+/*Section contact*/
+.contact{
+    background-color: #f7f7f7;
+}
+
+.contact form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    max-width: 800px;
+    width: 80%;
+}
+
+.contact form input{
+    padding: 15px;
+    flex: 1;
+    margin-right: 30px;
+    font-size: 18px;
+    color: #555;
+}
+
+.contact form .btn{
+    padding: 18px 42px;
+}
+
+
+@media (max-width: 800px){
+
+    .contact form input{
+        flex-basis: 100%;
+        margin: 0 0 20px 0;
+    }
+
+}
+
+
+/* /.Section contact */
+
+/*Footer*/
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-color: #414a4f;
+    padding: 60px 0;
+}
+
+footer ul{
+    display: flex;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+footer ul li{
+    margin: 0 8px;	
+}
+
+footer ul li:first-child{
+    margin-left: 0;	
+}
+
+footer ul li:last-child{
+    margin-right: 0;	
+}
+
+footer p{
+    text-transform: uppercase;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 10px;
+}
+
+footer p a{
+    color: #fff;
+}
+
+@media (max-width: 700px){
+
+    footer{
+        padding: 80px 15px;
+    }
+
+}</code></pre>
+                </div>
+            </div>
+        </div>
+
+
+        <header id="header">
+            <h2><a href="#"><img src="img/logo.png" width="150"></a></h2>
+            <nav id="nav-bar">
+                <li class="nav-link"><a href="#">Home</a></li>
+                <li class="nav-link"><a href="#features">Features</a></li>
+                <li class="nav-link"><a href="#preview">Preview</a></li>
+                <li class="nav-link"><a href="#newsletter">Newsletter</a></li>
+            </nav>
+        </header>
+        
+        <section class="one">
+            <div class="background-image" id="header-img"></div>
+
+            <h1>
+                CHROMALUXE
+            </h1>
+            <h3>
+                Creating a higher standard
+            </h3>
+
+
+        </section>
+
+        <section class="our-work">
+        <h3 class="title">Metal Print is the future of Photographic Printing</h3>
+        <p>ChromaLuxe is the world’s leading manufacturer of high-definition sublimatable photo panels. The combination of color brilliance, superior durability and archival qualities makes ChromaLuxe the perfect choice for image reproduction. Learn how our innovative products will give your images a lasting impact.
+        </p>
+        <hr>
+        <ul class="grid">
+            <li class="small" style="background-image: url(img/example1.jpg)"></li>
+            <li class="large" style="background-image: url(img/example3.jpg)"></li>
+            <li class="large" style="background-image: url(img/example4.jpg)"></li>
+            <li class="small" style="background-image: url(img/example5.jpg)"></li>
+
         </ul>
-        <p>Chromaluxe, Inc. All rights reserved.</p>
-    </footer>
+
+        </section>
+
+
+        <section class="features" id="features">
+        <h3 class="title">Unmatched and Unbelievable</h3>
+        <p>At ChromaLuxe, we’ve perfected our manufacturing process to create the highest quality photographic product available in the market today. We coat our aluminum plates with a very fine multiple layer polymer finish. Our photo panels contain a specialized, formulated coating that provides the foundation for a visually stunning and durable image.</p>
+        <hr>
+        <ul class="grid">
+            <li>
+                <i</i>
+                <h4>Color Brilliance</h4>
+                <p>Images are infused directly into our specialty coated metal sheets, creating unsurpassed color vibrancy and resolution.</p>
+                <br>
+                <br>
+                <br>
+                <br>
+            </li>
+            <li>
+                <i></i>
+                <h4>Fade Resistant</h4>
+                <p>The latest fade testing shows that our prints will last a lifetime with resistance to yellowing and climate damage.</p>
+                <br>
+                <br>
+                <br>
+                <br>
+            </li>
+            <li>
+                <i></i>
+                <h4>Flame Resistant </h4>
+                <p>All ChromaLuxe products meet ASTM standards for flame spread and smoke development.</p>
+                <br>
+                <br>
+                <br>
+                <br>
+            </li> 
+            <li>
+                <i></i>
+                <h4>Scratch Resistant </h4>
+                <p>Unique substrates and coatings provide incredible scratch and abrasion resistance.</p>
+            </li>
+            <li>
+                <i></i>
+                <h4>Lightweight</h4>
+                <p>All of our products are lightweight and extremely durable, making transportation and display easier than ever before.</p>
+            </li>
+            <li>
+                <i></i>
+                <h4>Easy to clean</h4>
+                <p>Our metal prints can be wiped clean with a cloth and any all-purpose cleaner, allowing your image to shine hassle free.</p>
+            </li> 
+            
+            
+
+        </ul>
+
+        </section>
+
+        <section class="reviews" id="preview">
+        <h3 class="title">Take a sneak peek of our Printing Technology:</h3>
+        <iframe width="900" height="500" src="https://www.youtube.com/embed/HqbWoYHwSkE" frameborder="0" id="video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
+        <section class="contact" id="newsletter">
+        <h3 class="title">
+            Subscribe to our Newsletter
+        </h3>
+        <p>
+            There’s a reason ‘Luxe’ is in our name. We are the world’s leading manufacturer of superior print mediums.
+        </p>
+        <hr>
+        <form id="form">
+                <input type="email" placeholder="Enter your email address" id="email">
+                <a href="#" class="btn" id="submit">Subscribe now</a>
+        </form>
+
+        </section>
+
+
+        <footer>
+            <ul>
+                <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fa fa-snapchat-square"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
+                <li><a href="#"><i class="fa fa-github-square"></i></a></li>
+            </ul>
+            <p>Chromaluxe, Inc. All rights reserved.</p>
+        </footer>
 
     <script src="easy_background.js"></script>
     <script>
-      easy_background(".background-image",
+    easy_background(".background-image",
         {
-          slide: ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg"],
-          delay: [2500, 2500, 2500, 2500, 2500]
+        slide: ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg"],
+        delay: [2500, 2500, 2500, 2500, 2500]
         }
-      );
+    );
     </script>
-</body>
+
+    <script src="./highlighter/prism.js"></script>
+    <script src="./highlighter/show-code.js"></script>
+    </body>
 </html>

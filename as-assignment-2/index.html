@@ -1,15 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Tribute to Steve Wozniak</title>
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Harry Bolingot">
-<link rel="stylesheet" href="css/style.css" type="text/css" />
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-</head>
-<body id="main">
-<div class="wrap">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <title>Tribute to Steve Wozniak</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Harry Bolingot">
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./highlighter/prism.css">
+  </head>
+  <body id="main">
+    <a href="javascript://" class="show-code-btn" id="myBtn" style="text-decoration: none;">&#60;&#47;&#62;</a>
+        <div id="myModal" class="modal">
+            <div class="modal-content" id="myModal-content">
+                <div class="show-code">
+                    <h4 style="margin-bottom: 0%; margin-top: 0%;">HTML:</h4>
+                    <pre class="language-markup line-numbers"><code class="language-html"><!--<div class="wrap">
   <p id="options"><a href="https://linkedin.com/in/harry-bolingot" target="_blank">Student</a><a href="https://avionschool.com/" target="_blank">Avion School</a></p>
   <ul id="menu">
     <li><a href="#">Home</a></li>
@@ -180,6 +186,350 @@
     </div>
     <div class="clear"></div>
   </div>
-</div>
-</body>
+</div>--></code></pre>
+                </div>
+                <div class="show-code">
+                  <h4 style="margin-bottom: 0%; margin-top: 0%;">CSS:</h4>
+                  <pre class="line-numbers"><code class="language-css">:link,:visited { 
+  text-decoration:none; 
+} 
+:focus, :active { 
+  outline: 0; 
+} 
+
+h1,h2,h3,h4,h5,h6,pre,code { 
+  font-size:1em; 
+} 
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input { 
+  margin: 0; 
+  padding: 0; 
+} 
+a img,:link img,:visited img { 
+  border: none;
+} 
+address { 
+  font-style: normal;
+}
+body { 
+  font: 1em 'EB Garamond', serif; 
+  background: #ffffff;
+  color: #333; 
+  line-height: 1.6em; 
+}
+a { 
+  color: #170dac; 
+  
+}
+p  { 
+  margin: 5px 0 15px;
+}
+h2 { 
+  font-size: 1.2em; 
+  padding: 0 0 0 9px; 
+}
+h2 a { 
+  text-decoration: underline; 
+}
+h1 { 
+  font: 2.3em 'EB Garamond', serif;; 
+  margin: 0 0 3px; 
+}
+h1 a { 
+  color: rgb(0, 0, 0); 
+}
+h1 a:hover { 
+  color: #313131; 
+  text-decoration: underline;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  }
+
+.clear { 
+  clear: both; 
+}
+.wrap { 
+  margin: 25px auto; 
+  max-width: 1200px; 
+}
+.responsive {
+  max-width: 100%;
+  height: auto;
+  }
+
+
+#options { 
+  float: right; 
+  color: #494949; 
+  font-weight: regular; 
+}
+  #options a { 
+    color: #494949; 
+    padding: 0 0 0 8px; 
+    margin: 0 0 0 10px; 
+  }
+  #options a:hover { 
+    color: #727272; 
+  }
+
+#menu {
+  display: none; 
+  float: left; 
+  margin: 0 0 40px; 
+}
+#menu li { 
+  display: inline; 
+}
+#menu li a { 
+  float: left; 
+  padding: 2px 10px; 
+  margin: 0 4px 0 0; 
+  color: #000000; 
+  border: 1px solid black;
+    border-radius: 4px;
+}
+  #menu li a:hover { 
+    color: #fff; 
+    background: #426ea1;
+  }
+
+#left { 
+  float: left; 
+  max-width: 750px; 
+  margin: 0 0 40px; 
+}
+#right { 
+  float: right; 
+  max-width: 400px; 
+  margin: 0 0 40px; 
+  background: #fff; 
+  border: 1px solid #4e4e4e; 
+  padding: 1px; 
+  margin-top: 20px;
+}
+  .box { 
+    background: #ffffff;
+    color: #000000; 
+    padding: 15px; 
+  }
+  .box h3 { 
+    margin: 0 0 10px; 
+  }
+  .box p { 
+    margin: 0; 
+  }
+
+#footer { 
+  clear: both;
+  border-top: 1px solid #6a5caa;  
+  background: #f6f6f6; 
+  color: #000000; 
+  padding: 10px 0;
+  font-weight: regular; 
+}
+  #footer ul { 
+    float: left; 
+    width: 200px; 
+  }
+  #footer li { 
+    padding: 5px 8px;  
+  }
+    #footer li a { 
+      color: #000000; 
+    }
+    #footer li a:hover { 
+      color: #525252; 
+    }
+  #footer #col { 
+    float: right; 
+    width: 1000px;   
+  }
+  #copyright {  
+    padding: 24px 0 0; 
+    font-size: .9em; 
+  }</code></pre>
+              </div>
+            </div>
+        </div>
+
+    <div class="wrap">
+      <p id="options"><a href="https://linkedin.com/in/harry-bolingot" target="_blank">Student</a><a href="https://avionschool.com/" target="_blank">Avion School</a></p>
+      <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Topics</a></li>
+        <li><a href="#">Advanced Search</a></li>
+        <li><a href="#">My Wiki</a></li>
+        <li><a href="#">My Profile</a></li>
+      </ul>
+      <div class="clear"></div>
+      <h1><a href="https://en.wikipedia.org/wiki/Steve_Wozniak" target="_blank" id="title">Steve Wozniak</a></h1>
+      <hr>
+      
+      <p id="tribute-info">Stephen Gary Wozniak (born August 11, 1950) also known by his nickname "Woz", is an American electronics engineer, programmer, philanthropist, and technology entrepreneur. In 1976, he co-founded Apple Inc. with partner and co-founder Steve Jobs, which later became the world's largest information technology company by revenue and the largest company in the world by market capitalization. Through their work at Apple in the 1970s and 1980s, he and Apple co-founder Steve Jobs are widely recognized as two prominent pioneers of the personal computer revolution.</p>
+
+      <p id="tribute-info">In 1975, Wozniak started developing the Apple I into the computer that launched Apple when he and Jobs first began marketing it the following year. He primarily designed the Apple II, introduced in 1977, known as one of the first highly successful mass-produced microcomputers, while Jobs oversaw the development of its foam-molded plastic case and early Apple employee Rod Holt developed the switching power supply. With software engineer Jef Raskin, Wozniak had a major influence over the initial development of the original Apple Macintosh concepts from 1979 to 1981, when Jobs took over the project following Wozniak's brief departure from the company due to a traumatic airplane accident. After permanently leaving Apple in 1985, Wozniak founded CL 9 and created the first programmable universal remote, released in 1987. He then pursued several other businesses and philanthropic ventures throughout his career, focusing largely on technology in K–12 schools.</p>
+
+      <p id="tribute-info">As of November 2019, Wozniak has remained an employee of Apple in a ceremonial capacity since stepping down in 1985.</p>
+
+      <div id="left">
+        <div class="box" id="right" style="float: left; width: 200px; padding: 5px 10px 10px 20px;">
+          <h3>Contents</h3>
+          <ol type="1" style="list-style: decimal;">
+            <li><a href="#Early_life">Early life</a></li>
+            <li><a href="#Career">Career</a></li>
+            <li><a href="#Honors_and_Awards">Honors and Awards</a></li>
+            <li><a href="#Media">Media</a></li>
+            <li><a href="#Personal_Life">Personal Life</a></li>
+            <li><a href="#References">References</a></li>
+          </ol>
+        </div>
+
+        <div class="clear"></div>
+
+        <h2 id="Early_life">Early life</h2><hr>
+        <p>Steve Wozniak was born and raised in San Jose, California, the son of Margaret Louise Wozniak (née Kern) (1923–2014)[15] from Washington state and Francis Jacob "Jerry" Wozniak (1925–1994) from Michigan. His father, Jerry Wozniak, was an engineer for Lockheed Corporation. He graduated from Homestead High School in 1968, in Cupertino, California. Wozniak has credited watching Star Trek and attending Star Trek conventions while in his youth as a source of inspiration for his starting Apple Computer, Inc.</p>
+        <h2 id="Career">Career</h2><hr>
+        <p>A precocious but undisciplined student with a gift for mathematics and an interest in electronics, he attended the University of Colorado at Boulder for one year (1968–69) before dropping out. Following his return to California, he attended a local community college and then the University of California, Berkeley. In 1971 Wozniak designed the “Blue Box,” a device for phreaking (hacking into the telephone network without paying for long-distance calls) that he and Jobs, a student at his old high school whom he met about this time, began selling to other students. Also during the early 1970s Wozniak worked at several small electronics firms in the San Francisco Bay area before obtaining a position with the Hewlett-Packard Company in 1975, by which time he had formally dropped out of Berkeley.</p>
+        <p>Wozniak also became involved with the Homebrew Computer Club, a San Francisco Bay area group centred around the Altair 8800 microcomputer do-it-yourself kit, which was based on one of the world’s first microprocessors, the Intel Corporation 8080, released in 1975. While working as an engineering intern at Hewlett-Packard, Wozniak designed his own microcomputer in 1976 using the new microprocessor, but the company was not interested in developing his design. Jobs, who was also a Homebrew member, showed so much enthusiasm for Wozniak’s design that they decided to work together, forming their own company, Apple Computer. Their initial capital came from selling Jobs’s automobile and Wozniak’s programmable calculator, and they set up production in the Jobs family garage to build microcomputer circuit boards. Sales of the kit were promising, so they decided to produce a finished product, the Apple II; completed in 1977, it included a built-in keyboard and support for a colour monitor. The Apple II, which combined Wozniak’s brilliant engineering with Jobs’s aesthetic sense, was the first personal computer to appeal beyond hobbyist circles. When the company went public in 1980, its market value exceeded $1 billion, at the time the fastest rise to that milestone in corporate history, and Wozniak’s stock in the company made him an instant multimillionaire.</p>
+        <p>During these years, Wozniak designed new hardware components, such as the 3.5-inch floppy disk drive for the Apple II, and various components of the Apple operating system and its software applications. This work ended in 1981 when he crashed his small airplane, leaving him temporarily with traumatic amnesia (unable to form new long-term memories), and he was forced to go on a sabbatical. He soon decided to return to Berkeley, under the pseudonym of Rocky Clark, in order to finish the computer science and electrical engineering courses needed to earn those degrees. Although he dropped out again, he eventually was given credit for his work at Apple, and the school awarded him a bachelor of science degree in electrical engineering in 1987.</p>
+        <p>Wozniak returned to Apple in 1982, though he resisted efforts to involve him in management. He finally retired as an active employee in 1985, immediately after being awarded, along with Jobs, a National Medal of Technology by U.S. Pres. Ronald W. Reagan. Wozniak spent the ensuing decades engaged in philanthropic causes, especially involving the education of children, and in volunteer work teaching computer enrichment classes to preteens.</p>
+        <p>Although Wozniak was semiretired after leaving Apple, he kept up with the computing world by funding various business ventures and occasionally serving as an adviser or board member for different companies. In 2009 he became the chief scientist at Fusion-Io, an American company that produces high-capacity, solid-state storage devices. Wozniak was serving on the company’s board of directors when he decided to become a full-time employee. After Fusion-Io was sold to SanDisk in 2014, Wozniak left the company to become chief scientist at Primary Data, which was involved in data virtualization; that business shut down in 2018.</p>
+
+        <h2 id="Honors_and_Awards">Honors and Awards</h2><hr>
+        <p>Called one of "Silicon Valley's most creative engineers," in 1990, he joined Mitchell Kapor in establishing the Electronic Frontier Foundation, an organization that provides legal aid for computer hackers facing criminal prosecution. Wozniak also founded Wheels of Zeus (WoZ) in 2002, a venture started with the aim of developing wireless GPS technology.</p>
+        <p>After WoZ closed in 2006, Wozniak published his autobiography, iWoz: From Computer Geek to Cult Icon: How I Invented the Personal Computer, Co-Founded Apple, and Had Fun Doing It. In 2008, he joined the Salt Lake City-based start-up Fusion-io as its chief scientist. </p>
+        <h3>Honorary degrees</h3>
+        <p>For his contributions to technology, Wozniak has been awarded a number of Honorary Doctor of Engineering degrees, which include the following:</p>
+        <ul style="list-style-type:disc; padding-left: 30px;">
+          <li>University of Colorado Boulder: 1989</li>
+          <li>North Carolina State University: 2004</li>
+          <li>Kettering University: 2005</li>
+          <li>Nova Southeastern University, Fort Lauderdale: 2005</li>
+          <li>ESPOL University in Ecuador: 2008</li>
+          <li>Michigan State University, in East Lansing 2011</li>
+          <li>Concordia University in Montreal, Canada: June 22, 2011</li>
+          <li>State Engineering University of Armenia: November 11, 2011</li>
+          <li>Santa Clara University: June 16, 2012</li>
+          <li>University Camilo José Cela in Madrid, Spain: November 8, 2013</li>
+        </ul><br>
+        <h2 id="Media">Media</h2><hr>
+        <p>Steve Wozniak has been mentioned, represented, or interviewed countless times in media from the founding of Apple to the present. Wired magazine described him as a person of "tolerant, ingenuous self-esteem" who interviews with "a nonstop, singsong voice".</p>
+
+        <h3>Documentaries</h3>
+        <ul style="list-style-type:disc; padding-left: 30px;">
+          <li>Steve Jobs: The Man in the Machine (2015)</li>
+          <li>Camp Woz: The Admirable Lunacy of Philanthropy – a 2009 documentary</li>
+          <li>Geeks On Board – a 2007 documentary</li>
+          <li>The Secret History of Hacking – a 2001 documentary film featuring Wozniak and other phreakers and computer hackers.</li>
+          <li>Triumph of the Nerds – a 1996 PBS documentary series about the rise of the personal computer.</li>
+          <li>Steve Wozniak's Formative Moment – a March 15, 2016, original short feature film from Reddit Formative Moment</li>
+        </ul>
+
+        <h3>Feature films</h3>
+        <ul style="list-style-type:disc; padding-left: 30px;">
+          <li>1999: Pirates of Silicon Valley – a TNT film directed by Martyn Burke. Wozniak is portrayed by Joey Slotnick while Jobs is played by Noah Wyle.</li>
+          <li>2013: Jobs  – a film directed by Joshua Michael Stern. Wozniak is portrayed by Josh Gad, while Jobs is portrayed by Ashton Kutcher.</li>
+          <li>2015: Steve Jobs  – a feature film by Danny Boyle, with a screenplay written by Aaron Sorkin. Wozniak is portrayed by Seth Rogen, while Jobs is portrayed by Michael Fassbender.</li>
+          <li>2015: Steve Jobs vs. Bill Gates: The Competition to Control the Personal Computer, 1974–1999: Original film from the National Geographic Channel for the American Genius series.</li>
+        </ul><br>
+        <h2 id="Personal_Life">Personal Life</h2><hr>
+        <p>Steve Wozniak...</p>
+        <ul style="list-style-type:disc; padding-left: 30px;">
+          <li>is a lifelong prankster</li>
+          <li>is a Segway Polo Player</li>
+          <li>earned his Ham Radio license in the 6th grade</li>
+          <li>has 3 adult children, 5 (and counting) grandchildren and 4 furry Bichon “kids”</li>
+          <li>has appeared as himself in several TV shows including “The Big Bang Theory”. In 2010 he appeared with his wife Janet on The Big Bang Theory season 4 episode “The Cruciferous Vegetable Amplification”.</li>
+          <li>produced the 1982 and 1983 US Festival events in San Bernardino, CA</li>
+          <li>was featured in the 1999 movie Pirates of Silicon Valley. Joey Slotnick portrayed Woz</li>
+          <li>was featured in the 2015 movie Steve Jobs. Seth Rogen portrayed Woz</li>
+          <li>in 2009 competed on Season 8 of Dancing with the Stars. He danced with Karina Smirnoff.</li>
+        </ul>
+        <p>He believes in encouraging free thinking and creativity for youngsters, counsel them against forces of conformity and drugs which leave them “not the master” of their fate.</p>
+        <h2 id="References">References</h2><hr>
+        <ol type="1" style="list-style: decimal; padding-left: 10px">
+          <li>Wikipedia contributors. (2020, November 30). Steve Wozniak. In Wikipedia, The Free Encyclopedia. Retrieved 04:27, December 5, 2020, from <a href="https://en.wikipedia.org/w/index.php?title=Steve_Wozniak&oldid=991522234" target="_blank">https://en.wikipedia.org/w/index.php?title=Steve_Wozniak&oldid=991522234</a>.</li>
+          <li>Biography.com Editors. (2019, August 20). Steve Wozniak Biography. The Biography.Com Website; A&E Television Networks. <a href="https://www.biography.com/inventor/steve-wozniak" target="_blank">https://www.biography.com/inventor/steve-wozniak</a>.</li>
+          <li>William, H. (2020, August 7). Steve Wozniak. Encyclopædia Britannica; Encyclopædia Britannica. <a href="https://www.britannica.com/biography/Stephen-Gary-Wozniak" target="_blank">https://www.britannica.com/biography/Stephen-Gary-Wozniak</a>.</li>
+        </ol>
+      </div>
+
+      <div id="right">
+        <table class="box">
+          <tbody style="vertical-align: top; text-align: left;">
+            <tr>
+              <th colspan="2" style="text-align:center;font-size:125%;font-weight:bold">Steve Wozniak</th>
+            </tr>
+            <tr>
+              <td colspan="2" id="img-div">
+                <img src="images/steve-wozniak.jpg" id="image" class="center responsive">
+                <p id="image-caption" style="text-align: center;">Wozniak in 2017</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Born</th>
+              <td>
+                Stephen Gary Wozniak<br>
+                August 11, 1950 (age 70)<br>
+                San Jose, California, U.S.<br>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Education</th>
+              <td>
+                BS in Electrical Engineering and Computer Science, University of California, Berkeley, 1987
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Occupation</th>
+              <td>
+                Electronics engineer<br>
+                Entrepreneur<br>
+                Programmer<br>
+                Philanthropist<br>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Known for</th>
+              <td>
+                Co-founder of Apple Inc.<br>
+                Apple I developer<br>
+                Apple II co-developer<br>
+                Pioneer of the personal computer revolution with Steve Jobs<br>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Net worth</th>
+              <td>
+                c. US$100 million (April 2017)
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Website</th>
+              <td>
+                <a href="www.woz.org" target="_blank">www.woz.org</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="wrap">
+        <img src="https://media.giphy.com/media/CEK6VlVkjTZ5u/giphy.gif" width="100px">
+        <div id="col">
+          <p>This tribute page is accomplished by Harry Bolingot. My chosen person-of-interest is Steve Wozniak, co-founder of Apple Inc., and one of the most famous businessmen in the high-tech industry in the world.</p>
+          <p id="copyright">Design: <a href="http://www.solucija.com/">Luka Cvrk</a> &middot; Sponsored by <a href="http://webpoint.wordpress.com/">B4Contact</a> &middot; Released under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Licence</a></p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+  <script src="./highlighter/prism.js"></script>
+  <script src="./highlighter/show-code.js"></script>
+  </body>
 </html>
