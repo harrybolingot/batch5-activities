@@ -27,8 +27,8 @@ class Store{
             }
 
             else {
-                newBook.quantity = prompt("Enter quantity of new book:");
-                newBook.value = prompt("Enter price of new book:");
+                newBook.quantity = parseInt(prompt("Enter quantity of new book:"));
+                newBook.value = parseInt(prompt("Enter price of new book:"));
                 this.currentInventoryList.push(newBook);
         
                 console.log(`New title added: ${newBook.quantity} ${(newBook.quantity == 1) ? "copy" : "copies"} of \"${newBook.title}\" at \₱${newBook.value}${(newBook.quantity == 1) ? "!" : " each!"}`);
@@ -38,44 +38,64 @@ class Store{
     }
 
     restockBook(title, quantity){
-        let bookToRestock = this.currentInventoryList.find(function(inventory, index){
-            if(inventory.title == title){
-                inventory.quantity += quantity;
-                return inventory;
-            }
-        });
+        if(quantity || quantity == 0){
+            let bookToRestock = this.currentInventoryList.find(function(inventory, index){
+                if(inventory.title == title){
+                    return inventory;
+                }
+            });
 
-        if(bookToRestock) console.log(`The title of the stock \"${bookToRestock.title}\" is updated from ${bookToRestock.quantity-quantity} to ${bookToRestock.quantity}.`);
-        else console.log(`The title \"${title}\" is currently not in our inventory.`);
+            if (quantity < 1){
+                console.log(`The title \"${title}\" will not be restocked.`);
+            }
+
+            else if(bookToRestock && quantity > 0){
+                bookToRestock.quantity += quantity;
+                console.log(`The title of the stock \"${bookToRestock.title}\" is updated from ${bookToRestock.quantity-quantity} to ${bookToRestock.quantity}.`);
+            } 
+
+            else console.log(`The title \"${title}\" is currently not in our inventory.`);
+        }
+
+        else console.log(`Cannot restock ${title} without proper quantity!`);
     }
     
     sellBook(title, quantity){
-        let bookToSell = this.currentInventoryList.find(function(inventory, index){
-            if(inventory.title == title){
-                return inventory;
-            }
-        });
+        if(quantity || quantity == 0){
+            let bookToSell = this.currentInventoryList.find(function(inventory, index){
+                if(inventory.title == title){
+                    return inventory;
+                }
+            });
 
-        if(bookToSell){
-            if(bookToSell.quantity == 0) {
-                console.log(`Sorry, we don't have copies available for \"${bookToSell.title}\"...`);
-            }
-        
-            else if (quantity > bookToSell.quantity){
-                console.log(`Sorry, only ${bookToSell.quantity} ${(bookToSell.quantity == 1) ? "copy" : "copies"} left available for ${bookToSell.title}...`);
-            }
-        
-            else if (quantity <= bookToSell.quantity && quantity > 0){
-                this.earnings += quantity*bookToSell.value;
-                bookToSell.quantity -= quantity;
-                
-                console.log(`Successful transaction!\n${quantity} ${(bookToSell.quantity == 1) ? "copy" : "copies"} of ${title} sold!\nTotal cost: \₱${quantity*bookToSell.value}`);
+            if (quantity < 1){
+                console.log(`The title \"${title}\" will not be sold.`);
             }
 
-            else console.log(`No copy of the title \"${title}\" will be sold.`);
+            else if(bookToSell && quantity > 0){
+                if(bookToSell.quantity == 0) {
+                    console.log(`Sorry, we don't have copies available for \"${bookToSell.title}\"...`);
+                }
+            
+                else if (quantity > bookToSell.quantity){
+                    console.log(`Sorry, only ${bookToSell.quantity} ${(bookToSell.quantity == 1) ? "copy" : "copies"} left available for ${bookToSell.title}...`);
+                }
+            
+                else if (quantity <= bookToSell.quantity){
+                    this.earnings += quantity*bookToSell.value;
+                    bookToSell.quantity -= quantity;
+                    
+                    console.log(`Successful transaction!\n${quantity} ${(bookToSell.quantity == 1) ? "copy" : "copies"} of ${title} sold!\nTotal cost: \₱${quantity*bookToSell.value}`);
+                }
+
+                else console.log(`The title \"${title}\" is currently not in our inventory.`);
+            }
+    
+            else console.log(`The title \"${title}\" is currently not in our inventory.`);
         }
 
-        else console.log(`The title \"${title}\" is currently not in our inventory.`);
+        else console.log(`Cannot sell ${title} without proper quantity!`);
+        
     }
     
     totalEarnings(){
@@ -84,10 +104,12 @@ class Store{
     
     listInventory(){
         var printInventoryMessage = "";
+        var totalCopies = 0;
             for(var i = 0; i < this.currentInventoryList.length; i++){
+            totalCopies += this.currentInventoryList[i].quantity;
             printInventoryMessage += ((i+1) + ". " + this.currentInventoryList[i].title + ", ₱" + this.currentInventoryList[i].value + " each, " + this.currentInventoryList[i].quantity + ((this.currentInventoryList[i].quantity == 1) ? " copy " : " copies ") + "in stock\n");
         }
-        console.log(`${this.name} currently holds ${this.currentInventoryList.length} titles.\n${printInventoryMessage}`);
+        console.log(`${this.name} currently holds ${this.currentInventoryList.length} titles, with a cumulative number of ${totalCopies} copies.\n${printInventoryMessage}`);
     }
 }
 
