@@ -3,7 +3,6 @@ class Store{
         this.name = name;
         this.earnings = 0;
         this.currentInventoryList = [];
-        this.formerTitlesList = [];
     }
   
     addBook(book){
