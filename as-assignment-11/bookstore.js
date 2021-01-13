@@ -3,6 +3,8 @@ class Store{
         this.name = name;
         this.earnings = 0;
         this.currentInventoryList = [];
+
+        console.log(`New store created: nbs\n\nAccess the following functions under this store by invoking the following:\n1. addBook()\n2. restockBook(title, quantity)\n3. sellBook(title, quantity)\n4. totalEarnings()\n5. listInventory()`);
     }
   
     addBook(book){
