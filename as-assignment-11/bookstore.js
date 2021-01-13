@@ -79,16 +79,6 @@ class Store{
         else console.log(`The title \"${title}\" is currently not in our inventory.`);
     }
     
-    updateTotalEarnings(book){
-            this.earnings += (book.quantity * book.value);
-    }
-    
-    calculateTotalEarnings(){
-        for(i = 0; i < this.currentInventoryList.length; i++){
-            this.earnings += this.currentInventoryList[i].value;
-        }
-    }
-    
     totalEarnings(){
         console.log(`Our total earnings at ${this.name} is currently: \₱${this.earnings}!`);
     }
